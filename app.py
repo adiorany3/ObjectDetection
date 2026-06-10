@@ -17,7 +17,7 @@ st.markdown("Aplikasi ini menggunakan model **YOLOv8** untuk mendeteksi objek da
 @st.cache_resource
 def load_model():
     # 'yolov8n.pt' adalah model nano (tercepat). Bisa diganti 'yolov8s.pt', 'yolov8m.pt', dll.
-    return YOLO("yolov8n.pt")
+    return YOLO("yolov8m.pt")
 
 model = load_model()
 
