@@ -108,4 +108,4 @@ with tab2:
 
 # Footer
 st.markdown("---")
-st.markdown("Dibuat dengan ❤️ menggunakan **Streamlit** & **Ultralytics YOLOv8**")
+st.markdown("Dibuat Galuh Adi Insani dengan ❤️ menggunakan **Streamlit** & **Ultralytics YOLOv8**")
