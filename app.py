@@ -37,7 +37,7 @@ st.markdown("Aplikasi ini menggunakan model **YOLOv8** untuk mendeteksi objek da
 @st.cache_resource
 def load_model():
     # 'yolov8n.pt' adalah model nano (tercepat). Bisa diganti 'yolov8s.pt' jika butuh akurasi lebih tinggi
-    return YOLO("yolov8m.pt")
+    return YOLO("yolov8x.pt")
 
 model = load_model()
 
@@ -45,7 +45,7 @@ model = load_model()
 st.sidebar.header("⚙️ Pengaturan")
 conf_threshold = st.sidebar.slider("Ambang Batas Kepercayaan (Confidence)", 0.0, 1.0, 0.25, 0.05)
 st.sidebar.markdown("---")
-st.sidebar.info("Model: **YOLOv8 Nano**\n\nDikembangkan oleh Ultralytics.")
+st.sidebar.info("Model: **YOLOv8 Medium**\n\nDikembangkan oleh Ultralytics.")
 
 # 6. Tab untuk Gambar dan Video
 tab1, tab2 = st.tabs(["📷 Deteksi Gambar", "🎥 Deteksi Video"])
