@@ -81,6 +81,7 @@ with tab1:
                 # Tampilkan detail objek
                 st.subheader("📋 Detail Objek Terdeteksi:")
                 boxes = results[0].boxes
+                st.metric("🔢 Jumlah Objek Terdeteksi", len(boxes))
                 if len(boxes) == 0:
                     st.info("Tidak ada objek yang terdeteksi dengan tingkat kepercayaan tersebut.")
                 else:
