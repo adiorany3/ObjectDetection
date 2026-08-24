@@ -4,6 +4,7 @@ from PIL import Image
 import tempfile
 import os
 import glob
+from collections import Counter
 from ultralytics import YOLO
 
 # 1. Konfigurasi Halaman
@@ -81,10 +82,24 @@ with tab1:
                 # Tampilkan detail objek
                 st.subheader("📋 Detail Objek Terdeteksi:")
                 boxes = results[0].boxes
-                st.metric("🔢 Jumlah Objek Terdeteksi", len(boxes))
+                st.metric("🔢 Jumlah Total Objek Terdeteksi", len(boxes))
+
                 if len(boxes) == 0:
                     st.info("Tidak ada objek yang terdeteksi dengan tingkat kepercayaan tersebut.")
                 else:
+                    # Hitung jumlah berdasarkan label objek
+                    labels = []
+                    for box in boxes:
+                        cls = int(box.cls[0])
+                        labels.append(model.names[cls])
+
+                    label_counts = Counter(labels)
+
+                    st.subheader("📊 Jumlah Berdasarkan Label")
+                    for label, jumlah in label_counts.items():
+                        st.write(f"- **{label.capitalize()}** : {jumlah} objek")
+
+                    st.subheader("🔍 Detail Confidence")
                     for box in boxes:
                         cls = int(box.cls[0])
                         conf = float(box.conf[0])
