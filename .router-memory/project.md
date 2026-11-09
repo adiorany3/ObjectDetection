@@ -1,4 +1,6 @@
 # Project context
+- Update: branch main HEAD 616de3f08c333c04074f3a24c17d31bdd2e20d7c. Older environment facts below are superseded: created Python 3.13 .venv and installed requirements successfully. All application imports, pip check and Streamlit CLI passed; app AST and VS Code setting validated. No model inference tested.
+- Added .vscode/settings.json selecting ${workspaceFolder}/.venv/bin/python (SHA256 bbe96fa3181bd6080407c2e395154e9ecdb3a8bb6583d9fe6ee01c31e36af77d) and .gitignore excluding .venv/ and __pycache__/ (SHA256 57a8ad0e62346f7b0f2e261d59a7b90f1310043424bcb9d229208f183f1940d9). app.py and requirements.txt fingerprints below unchanged. VS Code may require manual interpreter selection if previously selected.
 - Root: /Users/macbookpro/Documents/GitHub/ObjectDetection; branch main; HEAD 81cd45e9052e5fedc1c761cb812721ccaa3963be.
 - Streamlit image/video detection app using Ultralytics YOLO and OpenCV; bundled yolov8n.pt. requirements.txt includes streamlit, ultralytics, opencv-python-headless, Pillow.
 - Added root packages.txt with libgl1 and libglib2.0-0 for Streamlit Cloud Linux OpenCV shared-library dependencies. Ultralytics may also install GUI opencv-python. Actual final ImportError text was redacted, so the missing library is not confirmed.
